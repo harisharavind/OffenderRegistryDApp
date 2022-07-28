@@ -31,22 +31,33 @@ contract OffenderRegistry {
     struct defaulter {
         uint id;
         string name;
-        string defaultCategory;
-        string countryOfBirth;
+        string passportNumber;
+        string passportCountry;
+        string blacklistCountry;
+        string offenceCategory;
+        string ipfsDocumentLink;
     }
 
     mapping (uint => defaulter) defaulters;
     uint defaulterCounter;
 
-    function registerNewOffender(string memory _name, string memory _defaultCategory, string memory _countryOfBirth) public isOwner {
+    function registerNewOffender(string memory _name, 
+    string memory _passportNumber, 
+    string memory _passportCountry,
+    string memory _blacklistCountry,
+    string memory _offenceCategory,
+    string memory _ipfsDocumentLink) public isOwner {
 
         defaulterCounter++;
 
         defaulters[defaulterCounter] = defaulter(
             defaulterCounter,
             _name,
-            _defaultCategory,
-            _countryOfBirth
+            _passportNumber,
+            _passportCountry,
+            _blacklistCountry,
+            _offenceCategory,
+            _ipfsDocumentLink
         );
         //defaulter storage def = defaulters[defaulterCounter];
         //console.log("added offender:", def.name);
@@ -67,4 +78,3 @@ contract OffenderRegistry {
     }
 
 }
-//prev 0xcE91606d52118E7b8638D9809fc72Bff336dd2Ad
