@@ -7,13 +7,13 @@ var app = express();
 const PORT=8080;
 
 app.use(express.static('src'));
-app.get('/index-or.html', function (req, res) {
+app.get('/index.html', function (req, res) {
 
-  res.sendfile(_dirname + '/index-or.html');
+  res.sendfile(_dirname + '/index.html');
 
 });
 
-var server = app.listen(PORT, function (req, res) {
+var server = app.listen(process.env.PORT, function (req, res) {
     var host = server.address().address
     var port = server.address().port
     console.log("app listening at", host, port)
