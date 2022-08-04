@@ -1,0 +1,22 @@
+{
+  "name": "ChainList",
+  "version": "0.0.1",
+  "description": "app to buy/sell",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harish Aravind",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "requirejs": "^2.3.6",
+    "web3": "^1.2.4"
+  }
+}
